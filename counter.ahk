@@ -17,7 +17,8 @@ defaults := Map(
     "small", 14,
     "keyToggleMax", "F1",
     "keyIncrement", "F2",
-    "keyReset", "F3"
+    "keyReset", "F3",
+    "keyExit", "Escape"
 )
 
 if !FileExist(iniFile) {
@@ -29,6 +30,7 @@ if !FileExist(iniFile) {
     IniWrite defaults["keyToggleMax"], iniFile, "Settings", "keyToggleMax"
     IniWrite defaults["keyIncrement"], iniFile, "Settings", "keyIncrement"
     IniWrite defaults["keyReset"], iniFile, "Settings", "keyReset"
+    IniWrite defaults["keyExit"], iniFile, "Settings", "keyExit"
 }
 
 ; サポートされる色名一覧
@@ -56,6 +58,7 @@ bigSize := defaults["big"], smallSize := defaults["small"]
 keyToggleMax := defaults["keyToggleMax"]
 keyIncrement := defaults["keyIncrement"]
 keyReset := defaults["keyReset"]
+keyExit := defaults["keyExit"]
 
 ; === GUI作成 ===
 CreateGui()
@@ -64,7 +67,7 @@ CreateGui()
 Hotkey(keyToggleMax, ToggleMax)
 Hotkey(keyIncrement, IncrementCount)
 Hotkey(keyReset, ResetCount)
-Hotkey("Escape", (*) => ExitApp())
+Hotkey(keyExit, (*) => ExitApp())
 
 ArrayContains(array, value) {
     for index, item in array {
