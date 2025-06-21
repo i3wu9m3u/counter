@@ -3,7 +3,7 @@
 
 global aiGui, ctrlAI, ctrlX, ctrlSlashY
 global aiCount := 1
-global aiMax := 3
+global aiMax := 2
 
 ; === INI 読み込みとバリデーション ===
 scriptDir := A_ScriptDir
